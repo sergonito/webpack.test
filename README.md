@@ -31,3 +31,6 @@ node dist/bundle.js
 ## Credits
 
 Made with [createapp.dev](https://createapp.dev/)# webpack.test
+
+## Video
+Video: https://www.youtube.com/watch?v=o8KMucDpSno
