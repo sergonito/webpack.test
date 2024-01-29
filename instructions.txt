@@ -1,0 +1,12 @@
++ need install nodejs, npm, saas
+npm i -D webpack-dev-server
+npm i style-loader css-loader sass-loader
+npm i html-webpack-plugin
+npm i html-minifier
+ulimit -n 10000
+
+Commands:
+npm run start
+npm run clear
+npm run build:dev
+npm run build:prod
