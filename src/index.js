@@ -1,4 +1,5 @@
 import './sass/main.scss';
+import './sass/page.scss';
 import tesla from './assets/tesla.jpg';
 
 const mainImage = document.getElementById("mainImage")

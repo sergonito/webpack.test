@@ -1,10 +1,11 @@
 const webpack = require('webpack');
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlMinifier = require('html-minifier');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // не забудьте установить модуль через npm install mini-css-extract-plugin --save-dev
+//const HtmlMinifier = require('html-minifier');
 
 const config = {
-    entry: path.resolve(__dirname, 'src/index.js'),
+    entry: [path.resolve(__dirname, 'src/index.js'), path.resolve(__dirname, 'src/js/index2.js')],
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name]-[contenthash].js',
@@ -28,7 +29,11 @@ const config = {
         rules: [
             {
                 test: /\.scss$/,
-                use: ['style-loader', 'css-loader', 'sass-loader']
+                use: [
+                    //'style-loader',
+                    MiniCssExtractPlugin.loader, // вместо 'style-loader'
+                    'css-loader',
+                    'sass-loader']
             },
             {
                 test: /\.(jpg|jpeg|png|svg|gif)$/i,
@@ -53,8 +58,12 @@ const config = {
                 removeStyleLinkTypeAttributes: true,
                 useShortDoctype: true
             }
-        })
-    ]
+        }),
+        new MiniCssExtractPlugin({
+            filename: 'css/[name]-[contenthash].css', // имя файла для CSS
+            chunkFilename: 'css/[id]-[contenthash].css',
+        }),
+    ],
 };
 
 module.exports = config;

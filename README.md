@@ -34,3 +34,4 @@ Made with [createapp.dev](https://createapp.dev/)# webpack.test
 
 ## Video
 Video: https://www.youtube.com/watch?v=o8KMucDpSno
+https://devzone.org.ua/post/osnovi-webpack-castina-1
